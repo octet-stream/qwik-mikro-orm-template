@@ -2,7 +2,7 @@ import {Entity, Property, type Opt} from "@mikro-orm/mysql"
 
 import {Record} from "./Record.js"
 
-@Entity()
+@Entity({tableName: "todo"})
 export class Todo extends Record {
   @Property({type: "varchar"})
   details!: string

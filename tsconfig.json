@@ -18,7 +18,7 @@
     "noEmit": true,
     "types": ["node", "vite/client"]
   },
-  "include": ["src", "./*.d.ts", "./*.config.ts"],
+  "include": ["src", "adapters", "./*.d.ts", "./*.config.ts"],
   "ts-node": {
     "transpileOnly": true
   }

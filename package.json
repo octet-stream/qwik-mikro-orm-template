@@ -1,14 +1,14 @@
 {
-  "name": "my-qwik-empty-starter",
-  "description": "App with Routing built-in ready to create your app",
+  "type": "module",
+  "name": "qwik-mikro-orm-template",
+  "description": "Qwik template w/ Mikro ORM",
   "engines": {
-    "node": ">=15.0.0"
+    "node": ">=18"
   },
   "private": true,
   "trustedDependencies": [
     "sharp"
   ],
-  "type": "module",
   "scripts": {
     "build": "qwik build",
     "build.client": "vite build",
@@ -24,19 +24,43 @@
     "start": "vite --open --mode ssr",
     "qwik": "qwik"
   },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/server/lib/db/cli.ts"
+    ]
+  },
   "devDependencies": {
     "@builder.io/qwik": "^1.4.5",
     "@builder.io/qwik-city": "^1.4.5",
+    "@mikro-orm/migrations": "^6.1.4",
+    "@mikro-orm/seeder": "^6.1.4",
+    "@octetstream/eslint-config": "^8.0.2",
     "@types/eslint": "^8.56.2",
+    "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.11.6",
-    "@typescript-eslint/eslint-plugin": "^6.19.1",
-    "@typescript-eslint/parser": "^6.19.1",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "autoprefixer": "^10.4.14",
     "eslint": "^8.56.0",
     "eslint-plugin-qwik": "^1.4.5",
-    "prettier": "^3.2.4",
+    "postcss": "^8.4.31",
+    "tailwindcss": "3.3.3",
+    "ts-node": "^10.9.2",
     "typescript": "5.3.3",
     "undici": "*",
     "vite": "^5.0.12",
+    "vite-plugin-typescript-transform": "^1.2.2",
     "vite-tsconfig-paths": "^4.2.1"
+  },
+  "dependencies": {
+    "@mikro-orm/cli": "^6.1.4",
+    "@mikro-orm/core": "^6.1.4",
+    "@mikro-orm/mysql": "^6.1.4",
+    "@qwikest/icons": "^0.0.13",
+    "date-fns": "^3.3.1",
+    "lodash-es": "^4.17.21",
+    "mysql2": "^3.9.1",
+    "zod": "^3.22.4"
   }
 }

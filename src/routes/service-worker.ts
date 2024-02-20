@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+
 /*
  * WHAT IS THIS FILE?
  *
@@ -7,12 +9,12 @@
  * Qwik uses a service worker to speed up your site and reduce latency, ie, not used in the traditional way of offline.
  * You can also use this file to add more functionality that runs in the service worker.
  */
-import { setupServiceWorker } from "@builder.io/qwik-city/service-worker";
+import {setupServiceWorker} from "@builder.io/qwik-city/service-worker"
 
-setupServiceWorker();
+declare const self: ServiceWorkerGlobalScope
 
-addEventListener("install", () => self.skipWaiting());
+setupServiceWorker()
 
-addEventListener("activate", () => self.clients.claim());
+addEventListener("install", () => self.skipWaiting())
 
-declare const self: ServiceWorkerGlobalScope;
+addEventListener("activate", () => self.clients.claim())

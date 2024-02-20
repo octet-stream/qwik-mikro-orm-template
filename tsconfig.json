@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "target": "ES2017",
+    "allowJs": false,
+    "target": "ES2021",
     "module": "ES2022",
     "lib": ["es2022", "DOM", "WebWorker", "DOM.Iterable"],
     "jsx": "react-jsx",
     "jsxImportSource": "@builder.io/qwik",
     "strict": true,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
@@ -14,13 +15,11 @@
     "skipLibCheck": true,
     "incremental": true,
     "isolatedModules": true,
-    "outDir": "tmp",
     "noEmit": true,
-    "types": ["node", "vite/client"],
-    "paths": {
-      "~/*": ["./src/*"],
-    },
+    "types": ["node", "vite/client"]
   },
-  "files": ["./.eslintrc.cjs"],
   "include": ["src", "./*.d.ts", "./*.config.ts"],
+  "ts-node": {
+    "transpileOnly": true
+  }
 }

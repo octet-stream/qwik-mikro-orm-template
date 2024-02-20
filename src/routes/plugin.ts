@@ -1,5 +1,21 @@
 import type {RequestHandler} from "@builder.io/qwik-city"
-import {component$, Slot} from "@builder.io/qwik"
+
+import type {IDebug} from "../server/lib/db/zod/Debug.js"
+import {initOrm} from "../server/lib/db/orm.js"
+
+/**
+ * Initializes Mikro ORM instance on first request
+ */
+export const onRequest: RequestHandler = async ({env}) => {
+  await initOrm({
+    debug: env.get("NODE_ENV") as IDebug | undefined,
+    dbName: env.get("DB_NAME") as string,
+    host: env.get("DB_HOST"),
+    port: env.get("DB_PORT"),
+    user: env.get("DB_USER"),
+    password: env.get("DB_PASSWORD") as string
+  })
+}
 
 export const onGet: RequestHandler = async ({cacheControl}) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -11,13 +27,3 @@ export const onGet: RequestHandler = async ({cacheControl}) => {
     maxAge: 5
   })
 }
-
-const RootLayout = component$(() => (
-  <main class="w-screen h-screen flex select-none">
-    <div class="flex flex-1 flex-col">
-      <Slot />
-    </div>
-  </main>
-))
-
-export default RootLayout

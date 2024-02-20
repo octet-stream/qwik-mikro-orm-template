@@ -10,21 +10,21 @@
  * - npm run build
  *
  */
-import {
-  renderToStream,
-  type RenderToStreamOptions,
-} from "@builder.io/qwik/server";
-import { manifest } from "@qwik-client-manifest";
-import Root from "./root";
+import {renderToStream, type RenderToStreamOptions} from "@builder.io/qwik/server"
 
-export default function (opts: RenderToStreamOptions) {
+// eslint-disable-next-line import/no-unresolved
+import {manifest} from "@qwik-client-manifest"
+
+import Root from "./root"
+
+export default function ssrEntry(opts: RenderToStreamOptions) {
   return renderToStream(<Root />, {
     manifest,
     ...opts,
     // Use container attributes to set attributes on the html tag.
     containerAttributes: {
       lang: "en-us",
-      ...opts.containerAttributes,
-    },
-  });
+      ...opts.containerAttributes
+    }
+  })
 }

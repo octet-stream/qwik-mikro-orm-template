@@ -11,7 +11,14 @@ let cached: Promise<MikroORM>
  */
 export const initOrm = (config: IConfig) => {
   if (!cached) {
-    cached = getConfig(config).then(result => MikroORM.init(result))
+    cached = getConfig(config).then(async result => {
+      const orm = await MikroORM.init(result)
+
+      // TODO: Manage to run migrations in docker or something
+      await orm.getSchemaGenerator().updateSchema()
+
+      return orm
+    })
   }
 
   return cached

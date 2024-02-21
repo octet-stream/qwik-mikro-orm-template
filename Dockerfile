@@ -30,6 +30,6 @@ WORKDIR /usr/opt/qwik-mikro-orm-template
 
 RUN pnpm i -P --frozen-lockfile --ignore-scripts
 
-CMD ["pnpm", "run", "serve.node"]
+CMD ["pnpm", "run", "start"]
 
 EXPOSE 3000

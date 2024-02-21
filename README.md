@@ -1,65 +1,34 @@
-# Qwik City App ⚡️
+# qwik-mikro-orm-template
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+Qwik template w/ Mikro ORM
 
----
+## Commands
 
-## Project Structure
+| ID              | Description                                                                                                                                                    |
+|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `build`         | Runs `qwik build`                                                                                                                                              |
+| `build.client`  | Creates client-side bundle                                                                                                                                     |
+| `build.preview` | Creates `preview` build of the app with                                                                                                                        |
+| `build.node`    | Creates `production` build with `node:http` server as backend                                                                                                  |
+| `build.types`   | Runs TypeScript types validation via `tsc`                                                                                                                     |
+| `dev`           | Runs application with dev server                                                                                                                               |
+| `dev.open`      | Same as `dev`, but opens a browser                                                                                                                             |
+| `dev.debug`     | Runs `dev` server in debug mode                                                                                                                                |
+| `lint`          | Rns `eslint` on project's source filed                                                                                                                         |
+| `preview`       | Creates `preview` build using `build.preview` command, then starts preview server                                                                              |
+| `preview.open`  | Same as `preview` command, but opens a browser                                                                                                                 |
+| `serve.node`    | Creates `production` build, then starts Node.js server. Note: This command references `.env.local` file via node CLI using `--env-file` to apply configuration |
+| `start`         | Starts production server. This command is used when you build the app via `docker` or `docker compose`                                                         |
 
-This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
+## Configuration
 
-Inside your project, you'll see the following directory structure:
+| Name        | Required | Default value | Description                                   |
+|-------------|:--------:|:-------------:|-----------------------------------------------|
+| DB_NAME     | Yes      | –             | Database name                                 |
+| DB_HOST     | No       | `"localhost"` | Database server hostname                      |
+| DB_PORT     | No       | `3306`        | Database server port                          |
+| DB_USER     | Yes      | –             | Database user name                            |
+| DB_PASSWORD | Yes      | –             | Password for the user specified via `DB_USER` |
 
-```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
-```
-
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
-
-- `src/components`: Recommended directory for components.
-
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
-
-## Add Integrations and deployment
-
-Use the `pnpm qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
-
-```shell
-pnpm qwik add # or `pnpm qwik add`
-```
-
-## Development
-
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
-
-```shell
-npm start # or `pnpm start`
-```
-
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
-
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-pnpm preview # or `pnpm preview`
-```
-
-## Production
-
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
-
-```shell
-pnpm build # or `pnpm build`
-```
+<!-- TODO: Add pitfalls section -->
+<!-- TODO: Add deploymen section -->

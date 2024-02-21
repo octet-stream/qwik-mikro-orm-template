@@ -7,7 +7,5 @@ namespace NodeJS {
     readonly DB_PORT?: string
     readonly DB_USER: string
     readonly DB_PASSWORD: string
-
-    readonly AUTH_SECRET: string
   }
 }

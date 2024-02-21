@@ -15,17 +15,14 @@
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.node": "pnpm run build.client && vite build -c adapters/node/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
-    "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
     "dev": "vite --mode ssr",
     "dev.open": "vite --open --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
-    "fmt": "prettier --write .",
-    "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview",
     "preview.open": "qwik build preview && vite preview --open",
     "preview.node": "pnpm build.node && cross-env PLATFORM_NAME=node node --env-file=.env.local server/entry.node.js",
-    "serve.node": "PLATFORM_NAME=node node server/entry.node.js",
+    "start": "PLATFORM_NAME=node node server/entry.node.js",
     "preinstall": "npx only-allow pnpm"
   },
   "mikro-orm": {

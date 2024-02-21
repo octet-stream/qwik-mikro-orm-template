@@ -1,6 +1,6 @@
 # qwik-mikro-orm-template
 
-Qwik template w/ Mikro ORM
+Qwik template w/ Mikro ORM and MySQL
 
 ## Commands
 

@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "qwik-mikro-orm-template",
-  "description": "Qwik template w/ Mikro ORM",
+  "description": "Qwik template w/ Mikro ORM and MySQL",
   "engines": {
     "node": ">=18"
   },

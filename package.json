@@ -21,7 +21,7 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview",
     "preview.open": "qwik build preview && vite preview --open",
-    "preview.node": "pnpm build.node && cross-env PLATFORM_NAME=node node --env-file=.env.local server/entry.node.js",
+    "serve.node": "pnpm build.node && cross-env PLATFORM_NAME=node node --env-file=.env.local server/entry.node.js",
     "start": "PLATFORM_NAME=node node server/entry.node.js",
     "preinstall": "npx only-allow pnpm"
   },

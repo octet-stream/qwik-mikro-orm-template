@@ -29,6 +29,9 @@ export default defineConfig({
     qwikVite(),
     tsconfigPaths()
   ],
+  build: {
+    emptyOutDir: true
+  },
   server: {
     headers: {
       "Cache-Control": "public, max-age=0"

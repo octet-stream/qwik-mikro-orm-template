@@ -24,8 +24,8 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview",
     "preview.open": "qwik build preview && vite preview --open",
-    "serve.node": "cross-env PLATFORM_NAME=node node --env-file=.env.local .node/entry.node.js",
-    "start.node": "pnpm build.node && pnpm serve.node",
+    "preview.node": "pnpm build.node && cross-env PLATFORM_NAME=node node --env-file=.env.local server/entry.node.js",
+    "serve.node": "PLATFORM_NAME=node node server/entry.node.js",
     "preinstall": "npx only-allow pnpm"
   },
   "mikro-orm": {
@@ -53,7 +53,6 @@
     "tailwindcss": "3.3.3",
     "ts-node": "^10.9.2",
     "typescript": "5.3.3",
-    "undici": "*",
     "vite": "^5.0.12",
     "vite-plugin-typescript-transform": "^1.2.2",
     "vite-tsconfig-paths": "^4.2.1"
@@ -66,6 +65,7 @@
     "date-fns": "^3.3.1",
     "lodash-es": "^4.17.21",
     "mysql2": "^3.9.1",
+    "undici": "6.6.2",
     "zod": "^3.22.4"
   }
 }

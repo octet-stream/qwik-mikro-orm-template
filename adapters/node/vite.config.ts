@@ -9,7 +9,8 @@ export default extendConfig(baseConfig, {
     rollupOptions: {
       input: ["src/entry.node.tsx", "@qwik-city-plan"]
     },
-    outDir: ".node",
+    outDir: "server",
+    emptyOutDir: true,
     minify: false
   },
   plugins: [

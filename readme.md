@@ -31,4 +31,4 @@ Qwik template w/ Mikro ORM and MySQL
 | DB_PASSWORD | Yes      | –             | Password for the user specified via `DB_USER` |
 
 <!-- TODO: Add pitfalls section -->
-<!-- TODO: Add deploymen section -->
+<!-- TODO: Add deployment section -->

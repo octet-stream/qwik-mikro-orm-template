@@ -30,7 +30,7 @@ Qwik template w/ Mikro ORM and MySQL
 | DB_USER     | Yes      | –             | Database user name                            |
 | DB_PASSWORD | Yes      | –             | Password for the user specified via `DB_USER` |
 
-# Deployment
+## Deployment
 
 This template is using `node:http` as the server adapter and comes with `Dockerfile` to build an image and `compose.yaml` to run the app demo.
 I would now suggest using this adapter in production, as it is not mentioned anywhere in the docs, so it can be unstable at this time.
